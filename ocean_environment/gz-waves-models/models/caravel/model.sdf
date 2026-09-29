@@ -1,0 +1,70 @@
+<?xml version='1.0'?>
+<sdf version='1.7'>
+  <model name='caravel'>
+    <enable_wind>true</enable_wind>
+
+    <link name="base_link">
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://caravel/meshes/caravel.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://caravel/meshes/caravel.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>180</mass>
+        <inertia>
+          <ixx>120</ixx>
+          <ixy>0</ixy>
+          <iyy>393</iyy>
+          <iyz>0</iyz>
+          <izz>446</izz>
+        </inertia>
+      </inertial>
+    </link>
+
+    <!-- Hydrodynamics plugin -->
+    <plugin
+        filename="gz-waves1-hydrodynamics-system"
+        name="gz::sim::systems::Hydrodynamics">
+        
+        <enable>caravel::base_link</enable>
+
+        <!-- <enable>wam-v::left_engine_link</enable>
+        <enable>wam-v::left_propeller_link</enable>
+        <enable>wam-v::right_engine_link</enable>
+        <enable>wam-v::right_propeller_link</enable> -->
+
+        <hydrodynamics>
+        
+          <damping_on>1</damping_on>
+          <viscous_drag_on>1</viscous_drag_on>
+          <pressure_drag_on>1</pressure_drag_on>
+        
+          <!-- Linear and Angular Damping -->
+          <cDampL1>1.0E-6</cDampL1>
+          <cDampL2>1.0E-6</cDampL2>
+          <cDampR1>1.0E-6</cDampR1>
+          <cDampR2>1.0E-6</cDampR2>
+        
+          <!-- 'Pressure' Drag -->
+          <cPDrag1>1.0E+2</cPDrag1>
+          <cPDrag2>1.0E+2</cPDrag2>
+          <fPDrag>0.4</fPDrag>
+          <cSDrag1>1.0E+2</cSDrag1>
+          <cSDrag2>1.0E+2</cSDrag2>
+          <fSDrag>0.4</fSDrag>
+          <vRDrag>1.0</vRDrag>
+        
+        </hydrodynamics>
+    </plugin>
+  </model>
+</sdf>
