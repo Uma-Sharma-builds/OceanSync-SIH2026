@@ -1,0 +1,15 @@
+material OceanWater
+{
+  technique
+  {
+    pass
+    {
+      ambient 0.0 0.15 0.25 0.75
+      diffuse 0.0 0.35 0.55 0.75
+      specular 0.4 0.6 0.7 1.0
+      shininess 80
+      scene_blend alpha_blend
+      depth_write off
+    }
+  }
+}
