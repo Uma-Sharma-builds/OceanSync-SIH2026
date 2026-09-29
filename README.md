@@ -14,7 +14,7 @@ The web dashboard (React + Vite) is in a separate repository:
 https://github.com/UnnatiBhardwaj26/OceanSync
 
 ## The Problem
-Winter, under-ice and remote regions of the Southern Ocean are under-sampled because of cost, power and communication limits. Existing floats are expensive, use a lot of energy for continuous transmission, and depend on costly satellite links.
+  remote regions of the Southern Ocean are under-sampled because of cost, power and communication limits. Existing floats are expensive, use a lot of energy for continuous transmission, and depend on costly satellite links.
 
 ## Our Solution: Distributed Sensor Pods + One Gateway Buoy
 - Multiple low-cost sensor pods float independently and report over **LoRa** to one shared gateway buoy.
